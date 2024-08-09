@@ -1,0 +1,216 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Evaluation
+build_property.RootNamespace = Evaluation
+build_property.ProjectDir = E:\Sanda\ITU\Evaluation\Reel\TeamRace\Evaluation\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = E:\Sanda\ITU\Evaluation\Reel\TeamRace\Evaluation
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Admin/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWNjZXNzRGVuaWVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Admin/AdminLogin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5Mb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Admin/AdminSignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRtaW5TaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Admin/AffectationTempsCoureur.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWZmZWN0YXRpb25UZW1wc0NvdXJldXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Admin/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Admin/ListEtapeAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTGlzdEV0YXBlQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Admin/Profil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZmlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Admin/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Categorie/GenerationCategorie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllXEdlbmVyYXRpb25DYXRlZ29yaWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Classement/ClassementEquipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3NlbWVudFxDbGFzc2VtZW50RXF1aXBlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Classement/ClassementGeneraleParEquipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3NlbWVudFxDbGFzc2VtZW50R2VuZXJhbGVQYXJFcXVpcGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Classement/ClassementGeneraleParEtape.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3NlbWVudFxDbGFzc2VtZW50R2VuZXJhbGVQYXJFdGFwZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Classement/ClassementHomeAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3NlbWVudFxDbGFzc2VtZW50SG9tZUFkbWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Classement/ClassementHomeEquipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3NlbWVudFxDbGFzc2VtZW50SG9tZUVxdWlwZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Classement/ResultatClassementEquipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3NlbWVudFxSZXN1bHRhdENsYXNzZW1lbnRFcXVpcGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Classement/ResultatClassementEtape.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3NlbWVudFxSZXN1bHRhdENsYXNzZW1lbnRFdGFwZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Equipe/AffectationCoureur.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXEFmZmVjdGF0aW9uQ291cmV1ci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Equipe/ClassementParCategorie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXENsYXNzZW1lbnRQYXJDYXRlZ29yaWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Equipe/ClassementToutCategorie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXENsYXNzZW1lbnRUb3V0Q2F0ZWdvcmllLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Equipe/EquipeHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXEVxdWlwZUhvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Equipe/EquipeSignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXEVxdWlwZVNpZ25Jbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Equipe/EquipeSignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXEVxdWlwZVNpZ25VcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Equipe/ListEtapeEquipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXExpc3RFdGFwZUVxdWlwZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Equipe/ProfilEquipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXF1aXBlXFByb2ZpbEVxdWlwZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Import/ImportationEtapeResultat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1wb3J0XEltcG9ydGF0aW9uRXRhcGVSZXN1bHRhdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Import/ImportationPoints.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1wb3J0XEltcG9ydGF0aW9uUG9pbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Import/importCsv.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1wb3J0XGltcG9ydENzdi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Import/ImportMaisonTravauxDevis.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1wb3J0XEltcG9ydE1haXNvblRyYXZhdXhEZXZpcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Import/ImportPaiement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1wb3J0XEltcG9ydFBhaWVtZW50LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Import/ValidationImport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1wb3J0XFZhbGlkYXRpb25JbXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Penalite/AjoutPenalite.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVuYWxpdGVcQWpvdXRQZW5hbGl0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Penalite/PenaliteHome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVuYWxpdGVcUGVuYWxpdGVIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Shared/Components/ListeCourseAdmin/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTGlzdGVDb3Vyc2VBZG1pblxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Shared/Components/ListeCourseEquipe/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTGlzdGVDb3Vyc2VFcXVpcGVcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Shared/_Equipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9FcXVpcGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Truncate/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJ1bmNhdGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/UnitTest/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVW5pdFRlc3RcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Utils/AllForms.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXRpbHNcQWxsRm9ybXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Utils/Certificat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXRpbHNcQ2VydGlmaWNhdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Utils/ExportExample.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXRpbHNcRXhwb3J0RXhhbXBsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Utils/LoginModel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXRpbHNcTG9naW5Nb2RlbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Utils/Maps.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXRpbHNcTWFwcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Utils/Tableau.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXRpbHNcVGFibGVhdS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Utils/TableauDeBord.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXRpbHNcVGFibGVhdURlQm9yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Shared/_Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-j7qy1ffevy
+
+[E:/Sanda/ITU/Evaluation/Reel/TeamRace/Evaluation/Views/Shared/_Auth.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BdXRoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-0cu8odsicm

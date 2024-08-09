@@ -1,0 +1,42 @@
+﻿<div class="row" lang="fr-fr" id="content-to-export-pdf">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-info">Liste aléatoire</h4>
+                <div class="table-responsive" id="table-to-export-excel">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Numero</th>
+                                <th scope="col">Id</th>
+                                <th scope="col">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for(int i=1;i<=10;i++)
+                            {
+                                <tr>
+                                    <td>@i</td>
+                                    <td>@Random.Shared.Next(1000,9999)</td>
+                                    <td>@DateTime.Now.AddDays(i).ToString("dddd dd MMMM yyyy hh heure")</td>
+                                </tr>
+                            }
+                            <tr>
+                                <th>Total: </th>
+                                <td style="background-color: green;">@(1000 + 500.25)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button" class="btn btn-inverse-danger btn-fw btn-icon-text" onclick="exportPdf('TestExportPdf','content-to-export-pdf','/Utils/ExportPdf')">
+    <i class="ti-download btn-icon-prepend"></i> Export Pdf
+</button>
+<button type="button" class="btn btn-inverse-success btn-fw btn-icon-text" onclick="exportExcel('TestExportExcel','table-to-export-excel','/Utils/ExportExcel')">
+    <i class="ti-download btn-icon-prepend"></i> Export Excel
+</button>
+
+<script type="text/javascript" src="~/js/operations/exportOperations.js"></script>

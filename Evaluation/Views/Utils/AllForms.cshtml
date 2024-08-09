@@ -1,0 +1,73 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="bd-intro mt-2">
+    <div class="d-md-flex flex-md-row align-items-center justify-content-between mb-3">
+        <h3>All forms</h3>
+    </div>
+    <!-- <p class="bd-lead"></p> -->
+</div>
+<div class="bd-content ps-5 pe-5 pt-4 pb-4 bg-white shadow rounded col-8">
+    <form asp-area="" asp-controller="Utils" asp-action="AllForms" method="POST" enctype="multipart/form-data">
+        <div class="row">
+            <input name="id" type="hidden" class="form-control" id="inputText" required>
+            <div class="col-6 mb-3">
+                <label for="inputText" class="form-label">Nom</label>
+                <input name="nom" type="text" class="form-control" id="inputText" required>
+            </div>
+            <div class="col-6 mb-3">
+                <label for="inputNumber" class="form-label">Numero</label>
+                <input name="numero" type="number" step="0.1" class="form-control" id="inputNumber" required>
+            </div>
+            <div class="col-6 mb-3">
+                <label for="inputMail" class="form-label">Mail</label>
+                <input name="mail" type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" required>
+            </div>
+            <div class="col-6 mb-3">
+                <label for="inputPassword" class="form-label">Password</label>
+                <input name="password" type="password" class="form-control" id="inputPassword" required>
+            </div>
+            <div class="ms-3 mb-3 form-check form-switch">
+                <label class="form-check-label" for="inputCheckbox1">Choix 1</label>
+                <input name="check" value="choix1" class="form-check-input" type="checkbox" id="inputCheckbox1">
+            </div>
+            <div class="ms-3 mb-3 form-check form-switch">
+                <label class="form-check-label" for="inputCheckbox2">Choix 2</label>
+                <input name="check" value="choix2" class="form-check-input" type="checkbox" id="inputCheckbox2">
+            </div>
+            <div class="col-6 mb-3">
+                <label for="inputSelect" class="form-label">Liste</label>
+                <select class="form-select" id="inputSelect">
+                    <option value="select 1">Select 1</option>
+                    <option value="select 2">Select 2</option>
+                </select>
+            </div>
+            <div class="ms-3 mb-3 form-check">
+                <label class="form-check-label" for="inputRadio1">Radio 1</label>
+                <input name="radioCheck" class="form-check-input" type="radio" id="inputRadio1">
+            </div>
+            <div class="ms-3 mb-3 form-check">
+                <label class="form-check-label" for="inputRadio2">Radio 2</label>
+                <input name="radioCheck" class="form-check-input" type="radio" id="inputRadio2">
+            </div>
+            <div class="col-6 mb-3 ">
+                <label for="inputGroupFile" class="form-label">Import fichier</label>
+                <div class="input-group">
+                  <input type="file" class="form-control" id="inputGroupFile">
+                  <label class="input-group-text" for="inputGroupFile">Upload</label>
+                </div>
+            </div>
+            <div class="col-6 mb-3 ">
+                <label for="inputGroupFileImage" class="form-label">Import image</label>
+                <div class="input-group">
+                  <input type="file" class="form-control" id="inputGroupFileImage" accept="image/*">
+                </div>
+            </div>
+            
+            <div class="d-grid gap-2 my-3">
+                <button class="btn submit-button" type="submit">Se connecter</button>
+            </div>
+        </div>
+    </form>
+</div>

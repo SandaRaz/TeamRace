@@ -1,0 +1,91 @@
+﻿@using Evaluation.Models.Entity
+@using Evaluation.Models.ViewModel
+@model EtapeEquipeViewModel
+@{
+    int currentPage = 1;
+    if(ViewBag.currentPage != null)
+    {
+        currentPage = ViewBag.currentPage;
+    }
+    int offset = 0;
+    if(ViewBag.offset != null)
+    {
+        offset = ViewBag.offset;
+    }
+    string order = "asc";
+    if(ViewBag.order != null)
+    {
+        order = ViewBag.order;
+    }
+
+    TimeSpan dureeCourse = @Model.Course.DureeHeure;
+    var totalHours = (int)dureeCourse.TotalHours;
+    var minute = dureeCourse.Minutes;
+    var totalDays = (int)dureeCourse.TotalDays;
+}
+
+<div class="row">
+    <div class="col-md-12 stretch-card grid-margin grid-margin-md-0 my-3">
+        <div class="card data-icon-card-primary">
+            <div class="card-body">
+                <p class="card-title text-white">@Model.Course.Nom</p>
+                <div class="row">
+                    <div class="col-8 text-white">
+                        <h3>@Model.Course.DateCourse.ToString("dddd dd, MMMM yyyy")</h3>
+                        <p class="text-white font-weight-500 mb-0">Course de @totalHours h @minute min - (@totalDays jours)</p>
+                    </div>
+                    <div class="col-4 background-icon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12 grid-margin stretch-card my-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-info">Liste des étapes</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped" id="list-table">
+                        <thead>
+                            <tr>
+                                <th scope="col" onclick="location.href='@Url.Action("ListEtapeEquipe", "Equipe", new { currentPage = currentPage, offset = offset, signe = 0, order = order, triColumn = "Nom", courseId = Model.Course.Id })'"> Nom <i class="mdi mdi-sort"></i></th>
+                                <th scope="col" onclick="location.href='@Url.Action("ListEtapeEquipe", "Equipe", new { currentPage = currentPage, offset = offset, signe = 0, order = order, triColumn = "Longueur", courseId = Model.Course.Id })'"> Length (km) <i class="mdi mdi-sort"></i></th>
+                                <th scope="col" onclick="location.href='@Url.Action("ListEtapeEquipe", "Equipe", new { currentPage = currentPage, offset = offset, signe = 0, order = order, triColumn = "NombreCoureur", courseId = Model.Course.Id })'"> Coureur <i class="mdi mdi-sort"></i></th>
+                                <th scope="col" onclick="location.href='@Url.Action("ListEtapeEquipe", "Equipe", new { currentPage = currentPage, offset = offset, signe = 0, order = order, triColumn = "DateDepart", courseId = Model.Course.Id })'"> Depart <i class="mdi mdi-sort"></i></th>
+                                <th scope="col" onclick="location.href='@Url.Action("ListEtapeEquipe", "Equipe", new { currentPage = currentPage, offset = offset, signe = 0, order = order, triColumn = "RangEtape", courseId = Model.Course.Id })'"> Ordre <i class="mdi mdi-sort"></i></th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(Etape etape in Model.Etapes)
+                            {
+                                <tr id="ligne_@etape.Id">
+                                    <td>@etape.Nom</td>
+                                    <td>@etape.Longueur</td>
+                                    <td>@etape.NombreCoureur</td>
+                                    <td>@etape.DateDepart</td>
+                                    <td>@etape.RangEtape</td>
+                                    <td>
+                                        <button type="button" class="btn btn-inverse-primary btn-icon-text" onclick="location.href='@Url.Action("AffectationTempsCoureur","Admin", new { etapeId = @etape.Id })'"> <i class="mdi mdi-av-timer btn-icon-append"></i> Temps des coureurs </button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-inverse-secondary btn-icon-text" onclick="location.href='@Url.Action("ResultatClassementEtape","Classement", new { courseId = Model.Course.Id, etapeId = @etape.Id })'"> <i class="mdi mdi-sort-ascending btn-icon-append"></i> Resultat </button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="@Url.Action("ListEtapeAdmin", "Admin", new { currentPage = currentPage, offset = offset, signe = -1, courseId = Model.Course.Id })">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">@currentPage</a></li>
+        <li class="page-item"><a class="page-link" href="@Url.Action("ListEtapeAdmin", "Admin", new { currentPage = currentPage, offset = offset, signe = 1, courseId = Model.Course.Id })">Next</a></li>
+      </ul>
+    </nav>
+</div>

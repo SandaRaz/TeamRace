@@ -1,0 +1,105 @@
+﻿@using Evaluation.Models.Entity
+@using Evaluation.Models.ViewModel
+@model AffectationTempsCoureurViewModel
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <a href="@Url.Action("ListEtapeAdmin", "Admin", new { currentPage = 1, offset = 0, signe = 0, courseId = @Model.Etape.CourseId })">
+                    <i class="mdi mdi-arrow-left"></i> Retour
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 stretch-card grid-margin grid-margin-md-0 my-3">
+        <div class="card data-icon-card-primary">
+            <div class="card-body">
+                <p class="card-title text-white">
+                    Etape @Model.Etape.RangEtape: @Model.Etape.Nom, <span class="color-primary">@Model.Etape.DateDepart.ToString("dddd dd MMMM yyyy \\à HH\\hmm")</span>
+                    </p>
+                <div class="row">
+                    <div class="col-8 text-white">
+                        <h3>Coureur/equipe: @Model.Etape.NombreCoureur</h3>
+                        <p class="text-white font-weight-500 mb-0">@Model.Etape.Longueur Km</p>
+                    </div>
+                    <div class="col-4 background-icon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 grid-margin mt-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Affectation de temps d'un coureur</h4>
+                <form class="form-sample" asp-area="" asp-action="AffectationTempsCoureur" asp-controller="Admin" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" value="@Model.Etape.Id" name="etapeId" />
+                    <div class="row">
+                        <div class="col-6 mx-auto">
+                            <div class="form-floating">
+                                <select name="coureurId" class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                                    @foreach (Coureur coureur in Model.Coureurs)
+                                    {
+                                        <option value="@coureur.Id">@coureur.Nom (@coureur.Genre, Equipe @coureur.Equipe.Nom)</option>
+                                    }
+                                </select>
+                                <label for="floatingSelectGrid">Participants</label>
+                            </div>
+                        </div>
+                        <div class="col-6 mx-auto">
+                            <div class="form-floating form-group">
+                                <input type="datetime-local" name="dateArrivee" class="form-control form-control-lg" id="inputDateArrivee">
+                                <label for="inputDateArrivee">Temps d'arrivée</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    @if(ViewBag.ErrorMessage != null){
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Holy macaroni!</strong> @ViewBag.ErrorMessage
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+
+                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">AFFECTER</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-info">Resultats Etape @Model.Etape.RangEtape (@Model.Etape.Nom)</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped" id="list-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Equipe</th>
+                                <th scope="col">Coureur</th>
+                                <th scope="col">Genre</th>
+                                <th scope="col">Numero dossard</th>
+                                <th scope="col">Temps d'arrivée</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(Resultat resultat in Model.ResultatEtapes)
+                            {
+                                <tr id="ligne_@resultat.Id">
+                                    <td>@resultat.Coureur.Equipe.Nom</td>
+                                    <td>@resultat.Coureur.Nom</td>
+                                    <td>@resultat.Coureur.Genre</td>
+                                    <td>@resultat.Coureur.NumDossard</td>
+                                    <td>@resultat.DateArrivee.ToString("yyyy-MM-dd hh:mm:ss")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

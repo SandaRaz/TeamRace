@@ -1,0 +1,56 @@
+﻿.Bordure1 {
+    border: 1px dashed rgb(0,0,138);
+    width: 900px;
+    height: 600px;
+
+    background-image: url('/images/Certificat-tr-fond.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Bordure2 {
+    border: 0px solid rgb(0,0,118);
+    width: 99%;
+    height: auto;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.Bordure3 {
+    border: 0px dashed rgb(0,0,138);
+    width: 95%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: Georgia;
+
+    margin-top: 10%;
+}
+
+.certificat-title{
+    font-family: Georgia;
+    font-size: 75px;
+}
+
+.simple-text{
+    font-size: 35px;
+}
+
+.special-text{
+    font-family: 'Century Gothic';
+    font-weight: bold;
+    color: rgb(174,174,0);
+}
+
+.signature{
+    font-family: 'Vladimir Script';
+    font-size: 35px;
+    color: darkblue;
+    transform: rotate(-7deg);
+}
+
+.dateCertificat {
+    font-family: Georgia;
+    font-size: 15px;
+}

@@ -1,0 +1,68 @@
+﻿@using Evaluation.Models.Entity
+@using Evaluation.Models.MappingView
+@using Evaluation.Models.ViewModel
+@model List<EquipeClassementViewModel>
+@{
+    Layout = ViewData["Layout"]?.ToString();
+
+    Course course = ViewBag.Course;
+
+    string order = "desc";
+    if(ViewBag.order != null)
+    {
+        order = ViewBag.order;
+    }
+}
+
+<div class="row">
+    <div class="col-md-12 stretch-card grid-margin grid-margin-md-0 my-3">
+        <div class="card data-icon-card-primary">
+            <div class="card-body">
+                <p class="card-title text-white">@course.Nom</p>
+                <div class="row">
+                    <div class="col-8 text-white">
+                        <h3>Classement par equipe</h3>
+                    </div>
+                    <div class="col-4 background-icon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @foreach (EquipeClassementViewModel ec in Model)
+    {
+        <div class="col-lg-6 col-md-6 grid-margin stretch-card my-3">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-info">Equipe @ec.Equipe.Nom</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="list-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Coureur</th>
+                                    <th scope="col">Genre</th>
+                                    <th scope="col">Dossard</th>
+                                    <th scope="col" onclick="location.href='@Url.Action("ClassementGeneraleParEquipe", "Classement", new { order = order, triColumn = "TotalPoints", courseId = course.Id })'"> Total Points <i class="mdi mdi-sort"></i></th>
+                                    <th scope="col">Temps total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(ClassementEquipe classement in ec.Classements)
+                                {
+                                    <tr>
+                                        <td>@classement.NomCoureur</td>
+                                        <td>@classement.GenreCoureur</td>
+                                        <td>@classement.NumDossard</td>
+                                        <td>@classement.TotalPoints</td>
+                                        <td>@classement.TotalTempsEnString()</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

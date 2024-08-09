@@ -1,0 +1,44 @@
+﻿@using Evaluation.Models.ViewModel
+@model LoginAdminViewModel;
+@{
+    Layout = "_Auth";
+}
+
+<div class="row w-100 mx-0">
+    <div class="col-lg-6 col-md-6 mx-auto">
+        <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+            <div class="brand-logo">
+                <img src="~/images/TeamRace.png" alt="logo">
+            </div>
+            <h4>Hello! let's get started</h4>
+            <form class="pt-3" asp-area="" asp-action="AdminLogin" asp-controller="Admin" method="POST">
+                <div class="form-group">
+                    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Email" value="sanda@gmail.com" asp-for="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" value="123456" asp-for="Password" required>
+                </div>
+
+                @if(ViewBag.ErrorMessage != null){
+                    <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                        <strong>Holy macaroni!</strong> @ViewBag.ErrorMessage
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+
+                <div class="mt-3 d-grid gap-2">
+                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" >SIGN IN</button>
+                </div>
+                <div class="my-2 d-flex justify-content-between align-items-center">
+                    <div class="form-check">
+                        <label class="form-check-label text-muted">
+                        <input type="checkbox" checked="checked" class="form-check-input" asp-for="KeepLoggedIn"> Keep me signed in </label>
+                    </div>
+                </div>
+                <div class="text-center mt-4 font-weight-light"> 
+                    Don't have an account? <a href="@Url.Action("AdminSignUp","Admin")" class="text-primary">Create</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

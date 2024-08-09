@@ -1,0 +1,105 @@
+﻿@using Evaluation.Models.Entity
+@using Evaluation.Models.Obj
+@using Evaluation.Models.Utils
+@using Evaluation.Models.ViewModel
+@model List<Penalite>
+
+@{
+    int currentPage = 1;
+    if(ViewBag.currentPage != null)
+    {
+        currentPage = ViewBag.currentPage;
+    }
+    int offset = 0;
+    if(ViewBag.offset != null)
+    {
+        offset = ViewBag.offset;
+    }
+    string order = "asc";
+    if(ViewBag.order != null)
+    {
+        order = ViewBag.order;
+    }
+}
+
+<div class="container-xxl popup-dialog-container" id="dialog-container">
+    <div class="col-lg-4 col-md-6 col-sm-10 col-10 boolean-dialog">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Confirm delete</h5>
+                <div class="alert alert-danger alert-dismissible fade show mt-3" id="errorDefaultDisplay" role="alert">
+                    <strong>Holy macaroni!</strong> <span id="errorContent"></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div class="pt-3 border-top">
+                    <button type="button" class="btn btn-danger btn-md" onclick="deleteEntity()">Delete</button>
+                    <button type="button" class="btn btn-secondary btn-md" onclick="dismissDialog()">Discard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12 stretch-card grid-margin grid-margin-md-0 my-3">
+        <div class="card data-icon-card-primary">
+            <div class="card-body">
+                <h3 class="text-white">Gestion de pénalité</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12 col-md-12">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 my-2">
+                <button class="btn btn-outline-primary btn-icon-text" onclick="location.href='@Url.Action("AjoutPenalite", "Penalite")'">
+                    <i class="mdi mdi-plus"></i>
+                    <span class="d-inline-block text-left">Ajouter Pénalité</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12 grid-margin stretch-card my-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-info">Liste des pénalités</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped" id="list-table">
+                        <thead>
+                            <tr>
+                                <th scope="col" onclick="location.href='@Url.Action("PenaliteHome", "Penalite", new { currentPage = currentPage, offset = offset, signe = 0, order = order, triColumn = "Etape" })'"> Etape <i class="mdi mdi-sort"></i></th>
+                                <th scope="col" onclick="location.href='@Url.Action("PenaliteHome", "Penalite", new { currentPage = currentPage, offset = offset, signe = 0, order = order, triColumn = "Equipe" })'"> Equipe <i class="mdi mdi-sort"></i></th>
+                                <th scope="col" onclick="location.href='@Url.Action("PenaliteHome", "Penalite", new { currentPage = currentPage, offset = offset, signe = 0, order = order, triColumn = "TempsPenalite" })'"> Temps de pénalité <i class="mdi mdi-sort"></i></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(Penalite penalite in @Model)
+                            {
+                                <tr id="ligne_@penalite.Id">
+                                    <td>@penalite.Etape.Nom</td>
+                                    <td>@penalite.Equipe.Nom</td>
+                                    <td>@Functions.TimeSpanToString(penalite.TempsPenalite)</td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-icone-text" onclick="toogleDialog('@penalite.Id', 'ligne_@penalite.Id', '/Penalite/Delete', 'POST')"> Delete <i class="ti-trash btn-icon-append"></i></button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="@Url.Action("PenaliteHome", "Penalite", new { currentPage = currentPage, offset = offset, signe = -1, order = order })">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">@currentPage</a></li>
+        <li class="page-item"><a class="page-link" href="@Url.Action("PenaliteHome", "Penalite", new { currentPage = currentPage, offset = offset, signe = 1, order = order })">Next</a></li>
+      </ul>
+    </nav>
+</div>
+
+<script type="text/javascript" src="~/js/operations/delete.js"></script>

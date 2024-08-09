@@ -1,0 +1,150 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-info">Tableau</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Maison <i class="mdi mdi-sort"></i></th>
+                                <th scope="col">Montant <i class="mdi mdi-sort"></i></th>
+                                <th scope="col">Finition <i class="mdi mdi-sort"></i></th>
+                                <th scope="col">Taux finition <i class="mdi mdi-sort"></i></th>
+                                <th scope="col">Date debut <i class="mdi mdi-sort"></i></th>
+                                <th scope="col">Date fin <i class="mdi mdi-sort"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i=0; i < 5; i++)
+                                                            {
+                                <tr id="ligne_@i">
+                                    <td class="py-1">TOKYO</td>
+                                    <td>1 000 000</td>
+                                    <td>Standard</td>
+                                    <td>0</td>
+                                    <td>2024/05/21</td>
+                                    <td>2024/05/22</td>
+                                    <td>
+                                        <button type="button" onclick="location.href='/Utils/Tableau'" class="btn btn-inverse-dark btn-icon-text"> Edit <i class="ti-file btn-icon-append"></i></button>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-icone-text"> Delete <i class="ti-trash btn-icon-append"></i></button>
+                                    </td>
+                                </tr>   
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="">Next</a></li>
+      </ul>
+    </nav>
+</div>
+
+<div class="bd-content mb-4 col-12 shadow rounded">
+    <div class="card">
+        <h5 class="card-header">Contextual classes</h5>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="bd-content mb-4 col-12 shadow rounded">
+    <div class="card">
+        <h5 class="card-header">Contextual classes</h5>
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">First</th>
+                        <th scope="col">Last</th>
+                        <th scope="col">Picture</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>
+                            <img src="~/upload/images/no_image.jpg" class="rounded float-start listImage" alt="...">
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-light" onclick="location.href='@Url.Action("","")'">Modifier</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("","")'">Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>
+                            <img src="~/upload/images/no_image.jpg" class="rounded float-start listImage" alt="...">
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-light" onclick="location.href='@Url.Action("","")'">Modifier</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("","")'">Supprimer</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <!-- <td colspan="2">Larry the Bird</td> -->
+                        <td>Larry the Bird</td>
+                        <td>twitter</td>
+                        <td>
+                            <img src="~/upload/images/no_image.jpg" class="rounded float-start listImage" alt="...">
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-light" onclick="location.href='@Url.Action("","")'">Modifier</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("","")'">Supprimer</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

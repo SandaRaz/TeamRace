@@ -1,0 +1,42 @@
+﻿@model Evaluation.Models.Entity.Equipe
+
+@{
+    Layout = "_Equipe";
+}
+
+<div class="container-xxl popup-dialog-container" id="dialog-container">
+    <div class="col-lg-4 col-md-6 col-sm-10 col-10 boolean-dialog">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Confirmez votre deconnexion ?</h5>
+                <div class="alert alert-danger alert-dismissible fade show mt-3" id="errorDefaultDisplay" role="alert">
+                    <strong>Holy macaroni!</strong> <span id="errorContent"></span>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <div class="pt-3 border-top">
+                    <button type="button" class="btn btn-danger btn-md" onclick="logOut()">Oui</button>
+                    <button type="button" class="btn btn-secondary btn-md" onclick="dismissDialog()">Non</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="card col-lg-6 col-md-6 col-sm-8 my-2 card-surdef">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Nom</h5>
+            <p class="card-text">@Model.Email</p>
+            <p class="card-text text-secondary">Profil: @Model.Profil</p>
+            <p class="card-text">Date creation: @Model.DateCreation</p>
+            <div class="action-buttons">
+                <button type="button" class="btn btn-danger mt-2" onclick="toogleDialog('/Equipe/LogOut', 'GET')">
+                    <div class="bi-x">Deconnecter</div>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/js/operations/logOut.js"></script>
+

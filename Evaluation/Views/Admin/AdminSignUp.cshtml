@@ -1,0 +1,81 @@
+@using Evaluation.Models.ViewModel
+@model AddAdminViewModel;
+@{
+    Layout = "_Auth";
+}
+
+<div class="row w-100 mx-0">
+    <div class="col-lg-8 col-md-8 mx-auto">
+        <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+            <div class="brand-logo">
+                <img src="~/images/TeamRace.png" alt="logo">
+            </div>
+            <h4>New here? Sign up</h4>
+            <form class="pt-3" asp-area="" asp-action="AdminSignUp" asp-controller="Admin" method="POST" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-6 mx-auto">
+                        <div class="form-floating form-group">
+                            <input type="text" value="Raz" class="form-control form-control-lg" id="inputName" value="@Model.Name" asp-for="Name" required>
+                            <label for="inputName">Name</label>
+                        </div>
+                        <div class="form-floating form-group">
+                            <input type="date" class="form-control form-control-lg" id="inputDateOfBirth" value="@Model.DateOfBirth" asp-for="DateOfBirth">
+                            <label for="inputDateOfBirth">Date of birth</label>
+                        </div>
+                        <div class="form-floating form-group">
+                            <input type="email" value="sanda@gmail.com" class="form-control form-control-lg" id="inputEmail" value="@Model.Email" asp-for="Email">
+                            <label for="inputEmail">Email address</label>
+                        </div>
+                        <div class="form-floating form-group">
+                            <input type="password" value="123456" class="form-control form-control-lg" id="inputPassword" asp-for="Password">
+                            <label for="inputPassword">Password</label>
+                        </div>
+                        <div class="input-group">
+                            <label class="input-group-text bg-white" for="inputPicture">Profil picture</label>
+                            <input type="file" accept="image/*" class="form-control" id="inputPicture" value="@Model.Picture" asp-for="Picture">
+                        </div>
+                    </div>
+
+                    <div class="col-6 mx-auto">
+                        <div class="form-floating form-group">
+                            <input type="text" value="Sanda" class="form-control form-control-lg" id="inputFirstName" value="@Model.FirstName" asp-for="FirstName">
+                            <label for="inputFirstName">Firstname</label>
+                        </div>
+                        <div class="form-floating form-group">
+                            <input type="text" class="form-control form-control-lg hidden-form" id="inputNothing1">
+                            <label for="inputNothing1"></label>
+                        </div>
+                        <div class="form-floating form-group">
+                            <input type="text" class="form-control form-control-lg hidden-form" id="inputNothing2">
+                            <label for="inputNothing2"></label>
+                        </div>
+                        <div class="form-floating form-group">
+                            <input type="password" value="123456" class="form-control form-control-lg" id="inputConfirmPassword" asp-for="ConfirmPassword">
+                            <label for="inputConfirmPassword">Confirm password</label>
+                        </div>
+                    </div>
+                </div>
+
+                @if(ViewBag.ErrorMessage != null){
+                    <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                        <strong>Holy macaroni!</strong> @ViewBag.ErrorMessage
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+
+                <div class="mt-3 d-grid gap-2">
+                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" >SIGN IN</button>
+                </div>
+                <div class="my-2 d-flex justify-content-between align-items-center">
+                    <div class="form-check">
+                        <label class="form-check-label text-muted">
+                        <input type="checkbox" checked="checked" class="form-check-input" asp-for="KeepLoggedIn"> Keep me signed in </label>
+                    </div>
+                </div>
+                <div class="text-center mt-4 font-weight-light"> 
+                    Already have an account? <a href="@Url.Action("AdminLogin","Admin")" class="text-primary">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

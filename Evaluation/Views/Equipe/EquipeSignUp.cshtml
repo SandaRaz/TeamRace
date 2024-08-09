@@ -1,0 +1,54 @@
+﻿@using Evaluation.Models.ViewModel
+@model AddEquipeViewModel;
+@{
+    Layout = "_Auth";
+}
+
+<div class="row w-100 mx-0">
+    <div class="col-lg-8 col-md-8 mx-auto">
+        <div class="auth-form-light text-left py-5 px-4 px-sm-5">
+            <div class="brand-logo">
+                <img src="~/images/TeamRace.png" alt="logo">
+            </div>
+            <h4>New ? Sign up your Team for a Race</h4>
+            <form class="pt-3" asp-area="" asp-action="EquipeSignUp" asp-controller="Equipe" method="POST" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-6 mx-auto">
+                        <div class="form-floating form-group">
+                            <input type="text" class="form-control form-control-lg" id="inputNom" asp-for="Nom" required>
+                            <label for="inputNom">Nom de l'equipe</label>
+                        </div>
+                        <div class="form-floating form-group">
+                            <input type="password" class="form-control form-control-lg" id="inputMotDePasse" asp-for="MotDePasse">
+                            <label for="inputMotDePasse">Mot de passe</label>
+                        </div>
+                    </div>
+                    <div class="col-6 mx-auto">
+                        <div class="form-floating form-group">
+                            <input type="text" class="form-control form-control-lg" id="inputEmail" asp-for="Email">
+                            <label for="inputEmail">Adresse email ou nom</label>
+                        </div>
+                        <div class="form-floating form-group">
+                            <input type="password" class="form-control form-control-lg" id="inputConfirmationMotDePasse" asp-for="ConfirmMotDePasse">
+                            <label for="inputConfirmationMotDePasse">Confirmation mot de passe</label>
+                        </div>
+                    </div>
+                </div>
+
+                @if(ViewBag.ErrorMessage != null){
+                    <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                        <strong>Holy macaroni!</strong> @ViewBag.ErrorMessage
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+
+                <div class="mt-3 d-grid gap-2">
+                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" >SIGN UP</button>
+                </div>
+                <div class="text-center mt-4 font-weight-light"> 
+                    Already have a team account? <a href="@Url.Action("EquipeSignIn","Equipe")" class="text-primary">Login</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

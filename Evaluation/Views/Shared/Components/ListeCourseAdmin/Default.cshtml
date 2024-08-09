@@ -1,0 +1,18 @@
+﻿@using Evaluation.Models.Entity
+@model IEnumerable<Course>
+
+<li class="nav-item">
+    <a class="nav-link" data-bs-toggle="collapse" href="#courses" aria-expanded="false" aria-controls="courses">
+        <i class="mdi mdi-run menu-icon"></i>
+        <span class="menu-title">Courses</span>
+        <i class="menu-arrow"></i>
+    </a>
+    <div class="collapse" id="courses">
+        <ul class="nav flex-column sub-menu">
+            @foreach (Course course in Model)
+            {
+                <li class="nav-item"> <a class="nav-link" href="@Url.Action("ListEtapeAdmin", "Admin", new { currentPage = 1, offset = 0, signe = 0, courseId = @course.Id })"> @course.Nom </a></li>
+            }
+        </ul>
+    </div>
+</li>

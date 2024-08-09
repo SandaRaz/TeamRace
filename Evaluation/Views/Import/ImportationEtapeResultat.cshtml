@@ -1,0 +1,46 @@
+﻿@using Evaluation.Models.ViewModel
+@model ImportationViewModel
+
+<div class="row">
+    <div class="col-12 grid-margin mt-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Import Etape et Resultat</h4>
+                <form class="form-sample" asp-area="" asp-action="ImportationEtapeResultat" asp-controller="Import" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12 mx-auto">
+                            <div class="col-12 mb-3 ">
+                                <label for="inputCsvEtapes" class="form-label">Csv Etapes</label>
+                                <div class="input-group">
+                                  <input type="file" accept="/*" class="form-control" id="inputCsvEtapes" asp-for="EtapesFile">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 mx-auto">
+                            <div class="col-12 mb-3 ">
+                                <label for="inputCsvResultats" class="form-label">Csv Résultat</label>
+                                <div class="input-group">
+                                  <input type="file" accept="/*" class="form-control" id="inputCsvResultats" asp-for="ResultatFile">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-2">
+                            <div class="form-group row">
+                                <div class="col-sm-9">
+                                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">IMPORTER</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @if(ViewBag.ErrorMessage != null){
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Holy macaroni!</strong> @ViewBag.ErrorMessage
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

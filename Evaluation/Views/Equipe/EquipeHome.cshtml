@@ -1,0 +1,61 @@
+﻿@using Evaluation.Models.Entity
+@using Evaluation.Models.Obj
+@using Evaluation.Models.ViewModel
+@model EquipeHomeViewModel
+
+@{
+    Layout = "_Equipe";
+}
+
+<div class="row">
+    <div class="col-md-12 stretch-card grid-margin grid-margin-md-0 my-3">
+        <div class="card data-icon-card-primary">
+            <div class="card-body">
+                <p class="card-title text-white">Equipe @Model.Equipe.Nom</p>
+            </div>
+        </div>
+    </div>
+
+    @foreach(CoureursEtape coureursEtape in @Model.CoureursEtapes)
+    {
+        <div class="col-lg-12 grid-margin stretch-card my-3">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title text-info">@coureursEtape.Etape.Nom (@coureursEtape.Etape.Longueur Km) - @coureursEtape.Etape.NombreCoureur Coureur</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="list-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nom</th>
+                                    <th scope="col">Temps Chrono</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(Coureur coureur in coureursEtape.CoureurAffectes)
+                                {
+                                    <tr id="ligne_@coureur.Id">
+                                        <td>@coureur.Nom</td>
+                                        <td>@coureur.GetTempsChronoEtapeString(coureursEtape.Etape)</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 my-2">
+                    <button class="btn btn-outline-primary btn-icon-text" onclick="location.href='@Url.Action("AffectationCoureur", "Equipe", new { etapeId = coureursEtape.Etape.Id })'">
+                        <i class="mdi mdi-plus"></i>
+                        <span class="d-inline-block text-left">Ajouter coureur</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<script type="text/javascript" src="~/js/operations/logOut.js"></script>

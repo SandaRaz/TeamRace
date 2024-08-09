@@ -1,0 +1,26 @@
+﻿@using Evaluation.Models.ViewModel.Truncates
+@model List<string>
+
+<div class="bd-intro mt-2">
+    <div class="d-md-flex flex-md-row align-items-center justify-content-between mb-3">
+        <h3>To empty tables</h3>
+    </div>
+    <!-- <p class="bd-lead"></p> -->
+</div>
+<div class="bd-content ps-5 pe-5 pt-4 pb-4 bg-white shadow rounded col-8">
+    <div class="row">
+        <div class="d-grid gap-2 my-3">
+            <button type="button" class="btn btn-danger btn-icon-text" onclick="location.href='@Url.Action("TruncateAll","Truncate")'">
+                <i class="ti-trash btn-icon-prepend"></i> Empty all 
+            </button>
+        </div>
+        @foreach(string table in Model)
+        {
+            <div class="d-grid gap-2 my-3">
+                <button type="button" class="btn btn-warning btn-icon-text" onclick="location.href='@Url.Action("TruncateTable","Truncate", new { table = table })'">
+                    <i class="ti-trash btn-icon-prepend"></i> Empty @table 
+                </button>
+            </div>
+        }
+    </div>
+</div>

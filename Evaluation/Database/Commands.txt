@@ -1,0 +1,8 @@
+Add-Migration "Initial Migration"
+Update-Database
+
+-----------------------------------
+Reverting Migration: Update-Database -Migration 0, Remove-Migration
+
+-----------------------------------
+CREATE EXTENSION "uuid-ossp";

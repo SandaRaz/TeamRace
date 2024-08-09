@@ -1,0 +1,112 @@
+﻿<div class="row" id="mapExample" style="height: 600px;">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card position-relative">
+            <div class="card-body">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var map = L.map('mapExample').setView([-18.766947, 46.869107], 6);
+
+    var wmsUrl = 'http://127.0.0.1/cgi-bin/mapserv.exe?map=C:/ms4w/apps/madagascar/madagascar.map';
+
+    var buildings = L.tileLayer.wms(wmsUrl, {
+        layers: 'buildings',
+        format: 'image/png',
+        transparent: true
+    });
+
+    var landuse = L.tileLayer.wms(wmsUrl, {
+        layers: 'landuse',
+        format: 'image/png',
+        transparent: true
+    });
+
+    var natural = L.tileLayer.wms(wmsUrl, {
+        layers: 'natural',
+        format: 'image/png',
+        transparent: true
+    });
+
+    var places = L.tileLayer.wms(wmsUrl, {
+        layers: 'places',
+        format: 'image/png',
+        transparent: true
+    });
+
+    var pofw = L.tileLayer.wms(wmsUrl, {
+        layers: 'pofw',
+        format: 'image/png',
+        transparent: true
+    });
+
+    var pois = L.tileLayer.wms(wmsUrl, {
+        layers: 'POIs',
+        format: 'image/png',
+        transparent: true
+    });
+
+    var railways = L.tileLayer.wms(wmsUrl, {
+        layers: 'railways',
+        format: 'image/png',
+        transparent: true
+    });
+
+    var roads = L.tileLayer.wms(wmsUrl, {
+        layers: 'roads',
+        format: 'image/png',
+        transparent: true
+    });
+
+    var traffic = L.tileLayer.wms(wmsUrl, {
+        layers: 'traffic',
+        format: 'image/png',
+        transparent: true
+    });
+
+    var transport = L.tileLayer.wms(wmsUrl, {
+        layers: 'transport',
+        format: 'image/png',
+        transparent: true
+    });
+
+    var water = L.tileLayer.wms(wmsUrl, {
+        layers: 'water',
+        format: 'image/png',
+        transparent: true
+    });
+
+    var waterways = L.tileLayer.wms(wmsUrl, {
+        layers: 'waterways',
+        format: 'image/png',
+        transparent: true
+    });
+
+    var baseLayers = {
+        "Buildings": buildings,
+        "Roads": roads
+    };
+
+    var overlayLayers = {
+        "Waterways": waterways,
+        "Landuse": landuse,
+        "Natural": natural,
+        "Places": places,
+        "POIs": pois,
+        "Railways": railways,
+        "Traffic": traffic,
+        "Transport": transport,
+        "Pofw": pofw,
+        "Water": water
+    };
+
+    // controles de couches
+    L.control.layers(baseLayers, overlayLayers).addTo(map);
+
+    // couches par defaut
+    buildings.addTo(map);
+    roads.addTo(map);
+
+</script>

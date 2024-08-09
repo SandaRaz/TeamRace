@@ -1,0 +1,76 @@
+﻿@using Evaluation.Models.Entity
+@using Evaluation.Models.MappingView
+@using Evaluation.Models.ViewModel
+@model List<EtapeClassementViewModel>
+@{
+    Layout = ViewData["Layout"]?.ToString();
+
+    Course course = ViewBag.Course;
+
+    string order = "asc";
+    if(ViewBag.order != null)
+    {
+        order = ViewBag.order;
+    }
+}
+
+<div class="row">
+    <div class="col-md-12 stretch-card grid-margin grid-margin-md-0 my-3">
+        <div class="card data-icon-card-primary">
+            <div class="card-body">
+                <p class="card-title text-white">@course.Nom</p>
+                <div class="row">
+                    <div class="col-8 text-white">
+                        <h3>Classement par étapes</h3>
+                    </div>
+                    <div class="col-4 background-icon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    @foreach (EtapeClassementViewModel ec in Model)
+    {
+        <div class="col-lg-12 grid-margin stretch-card my-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-info">Etape @ec.Etape.RangEtape @ec.Etape.Nom (@ec.Etape.Longueur Km) @ec.Etape.DateDepart.ToString("dddd dd MMMM yyyy \\à HH\\hmm")</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped" id="list-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Equipe</th>
+                                <th scope="col">Coureur</th>
+                                <th scope="col">Genre</th>
+                                <th scope="col">Dossard</th>
+                                <th scope="col">Depart</th>
+                                <th scope="col">Arrivé</th>
+                                <th scope="col">Temps</th>
+                                <th scope="col" onclick="location.href='@Url.Action("ClassementGeneraleParEtape", "Classement", new { order = order, triColumn = "Rang", courseId = course.Id })'"> Rang <i class="mdi mdi-sort"></i></th>
+                                <th scope="col" onclick="location.href='@Url.Action("ClassementGeneraleParEtape", "Classement", new { order = order, triColumn = "Points", courseId = course.Id })'"> Points <i class="mdi mdi-sort"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(Classement classement in ec.Classements)
+                            {
+                                <tr>
+                                    <td>@classement.NomEquipe</td>
+                                    <td>@classement.NomCoureur</td>
+                                    <td>@classement.GenreCoureur</td>
+                                    <td>@classement.NumDossard</td>
+                                    <td>@classement.DateDepart</td>
+                                    <td>@classement.DateArrivee</td>
+                                    <td>@classement.ChronoString()</td>
+                                    <td>@classement.Rang</td>
+                                    <td>@classement.Points</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>

@@ -1,0 +1,49 @@
+﻿<div class="row">
+    <div class="col-md-6 mb-4 stretch-card transparent">
+        <div class="card card-tale">
+            <div class="card-body">
+                <p class="mb-4">Today’s Receipts</p>
+                <p class="fs-30 mb-3">@String.Format("{0:N2}", 4000000) Ar</p>
+                <p>10.00% (30 days)</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4 stretch-card transparent">
+        <div class="card card-dark-blue">
+            <div class="card-body">
+                <p class="mb-4">Total Bookings</p>
+                <p class="fs-30 mb-3">@String.Format("{0:N0}", 61344)</p>
+                <p>22.00% (30 days)</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <div class="container-fluid">
+                    <div class="d-flex">
+                        <input class="form-control me-2" id="annee-devis" value="2024" type="number" placeholder="Annee" aria-label="Annee">
+                        <button class="btn btn-outline-secondary" onclick="fetchHistogrammeDevis('/Admin/TableauDeBord','POST')">Voir</button>
+                    </div>
+                    <div class="d-grid gap-2 my-3">
+                        <div class="alert alert-danger alert-dismissible fade show" id="errorDefaultDisplay" role="alert">
+                            <strong>Holy macaroni! </strong><span id="errorContent"></span>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Bar chart</h4>
+                <canvas id="barChart" width="749" height="374" style="display: block; box-sizing: border-box; height: 187px; width: 374px;"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/template/assets/vendors/chart.js/chart.umd.js" defer></script>
+<script src="~/template/assets/js/chart.js" defer></script>

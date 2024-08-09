@@ -1,0 +1,47 @@
+﻿@using Evaluation.Models.Entity
+@model List<Categorie>
+
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card my-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-info">Liste des catégories</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped" id="list-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Catégorie</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(Categorie categorie in @Model)
+                            {
+                                <tr id="ligne_@categorie.Id">
+                                    <td>@categorie.Nom</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12 col-md-12">
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-sm-6 my-2">
+            <button class="btn btn-outline-primary btn-icon-text" onclick="location.href='@Url.Action("GenerationCategorieCoureurs", "Categorie")'">
+                <i class="mdi mdi-repeat"></i>
+                <span class="d-inline-block text-left">Générer catégorie</span>
+            </button>
+        </div>
+        @if(ViewBag.ErrorMessage != null){
+            <div class="col-lg-12 col-md-12 col-sm-12 my-2">
+                <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                    <strong>Holy macaroni!</strong> @ViewBag.ErrorMessage
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        }
+    </div>
+</div>

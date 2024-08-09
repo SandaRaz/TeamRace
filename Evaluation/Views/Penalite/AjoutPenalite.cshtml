@@ -1,0 +1,75 @@
+﻿@using Evaluation.Models.Entity
+@using Evaluation.Models.ViewModel
+
+@model AjoutPenaliteViewModel
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <a href="@Url.Action("PenaliteHome", "Penalite", new { currentPage = 1, offset = 0, signe = 0 })">
+                    <i class="mdi mdi-arrow-left"></i> Retour
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 grid-margin mt-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Ajout de pénalité</h4>
+                <form class="form-sample" asp-area="" asp-action="AjoutPenalite" asp-controller="Penalite" method="POST" enctype="multipart/form-data">
+                    <div class="row">
+
+                        <div class="col-6 mx-auto my-2">
+                            <div class="form-floating">
+                                <select asp-for="EtapeId" class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                                    @foreach (Etape etape in Model.Etapes)
+                                    {
+                                        <option value="@etape.Id"> @etape.Nom </option>
+                                    }
+                                </select>
+                                <label for="floatingSelectGrid">Choix étape</label>
+                            </div>
+                        </div>
+
+                        <div class="col-6 mx-auto my-2">
+                            <div class="form-floating">
+                                <select asp-for="EquipeId" class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                                    @foreach (Equipe equipe in Model.Equipes)
+                                    {
+                                        <option value="@equipe.Id"> @equipe.Nom </option>
+                                    }
+                                </select>
+                                <label for="floatingSelectGrid">Choix équipe</label>
+                            </div>
+                        </div>
+
+                        <div class="col-6 mx-auto my-2">
+                            <div class="form-floating form-group">
+                                <input asp-for="TempsPenaliteString" type="text" value="00:00:00" placeholder="Temps penalite"  step="1" class="form-control form-control-lg" id="inputTempsPenalite">
+                                <label for="inputTempsPenalite">Temps de penalité: 00:00:00</label>
+                                <span asp-validation-for="TempsPenaliteString" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 my-2">
+                            <div class="form-group row">
+                                <div class="col-sm-9">
+                                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Valider</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                
+                @if(ViewBag.ErrorMessage != null){
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Holy macaroni!</strong> @ViewBag.ErrorMessage
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

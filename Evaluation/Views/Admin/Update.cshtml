@@ -1,0 +1,56 @@
+@model Evaluation.Models.ViewModel.UpdateAdminViewModel
+
+<div class="bd-intro mt-2">
+    <div class="d-md-flex flex-md-row align-items-center justify-content-between mb-3">
+        <h3>Update user</h3>
+    </div>
+    <!-- <p class="bd-lead"></p> -->
+</div>
+<div class="bd-content ps-5 pe-5 pt-4 pb-4 bg-white shadow rounded col-8">
+    <form asp-area="" asp-controller="Admin" asp-action="Update" method="POST" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-6 mb-3" hidden>
+                <label for="inputId" class="form-label">Id</label>
+                <input type="hidden" class="form-control" id="inputText" value="@Model.Id" asp-for="Id">
+            </div>
+            <div class="col-6 mb-3" >
+                <label for="inputName" class="form-label">Name</label>
+                <input type="text" class="form-control" id="inputText" value="@Model.Name" asp-for="Name">
+            </div>
+            <div class="col-6 mb-3" >
+                <label for="inputFirstName" class="form-label">FirstName</label>
+                <input type="text" class="form-control" id="inputText" value="@Model.FirstName" asp-for="FirstName">
+            </div>
+            <div class="col-6 mb-3" >
+                <label for="inputDateOfBirth" class="form-label">DateOfBirth</label>
+                <input type="date" class="form-control" id="inputText" value="@Model.DateOfBirth" asp-for="DateOfBirth">
+            </div>
+            <div class="col-6 mb-3" >
+                <label for="inputEmail" class="form-label">Email</label>
+                <input type="text" class="form-control" id="inputText" value="@Model.Email" asp-for="Email">
+            </div>
+            <div class="col-6 mb-3">
+                <label for="inputGroupFile" class="form-label">Picture</label>
+                <div class="input-group">
+                  <input type="file" class="form-control" id="inputGroupFile" accept="image/*" asp-for="Picture">
+                </div>
+            </div>
+            <div class="col-6 mb-3" >
+                <label for="inputDateCreation" class="form-label">DateCreation</label>
+                <input type="date" class="form-control" id="inputText" value="@Model.DateCreation" asp-for="DateCreation">
+            </div>
+            <div class="d-grid gap-2 my-3">
+                <button class="btn submit-button" type="submit">Update</button>
+            </div>
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="d-grid gap-2 my-3">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                      <strong>Error: </strong>@ViewBag.ErrorMessage
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            }
+        </div>
+    </form>
+</div>

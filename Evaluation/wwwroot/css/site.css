@@ -1,0 +1,48 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.hidden-form{
+    opacity: 0;
+}
+
+#fond-logo-2 {
+    background-image: url("/images/design/logo (2).jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#fond-logo-7 {
+    background-image: url("/images/design/logo (7).jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.background-color-default {
+    background-color: rgba(250,250,250,0);
+}
+
+#background-color-1{
+    background-color: rgba(0,137,0,7);
+}
+
+#background-color-2 {
+    background-color: rgba(137,0,0,7);
+}

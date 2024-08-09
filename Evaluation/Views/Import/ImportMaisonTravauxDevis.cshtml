@@ -1,0 +1,57 @@
+﻿@model Evaluation.Models.ViewModel.ImportMTDPViewModel;
+
+<div class="container-xxl popup-dialog-container" id="dialog-container">
+    <div class="boolean-dialog col-4" id="current-dialog">
+        <div class="toast-body">
+            <div class="mt-2 pt-2 border-top" id="ligne-valid">
+            </div>
+            <div class="mt-2 pt-2 border-top" id="ligne-invalid">
+            </div>
+            <div class="mt-2 pt-2 border-top">
+                <button type="button" class="btn btn-danger btn-sm" onclick="importLinesToTable()">Importer</button>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="dismissDialog()">Annuler</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="bd-intro mt-2">
+    <div class="d-md-flex flex-md-row align-items-center justify-content-between mb-3">
+        <h3>Import csv Maison et devis</h3>
+    </div>
+    <!-- <p class="bd-lead"></p> -->
+</div>
+<div class="bd-content ps-5 pe-5 pt-4 pb-4 bg-white shadow rounded col-8">
+    <form asp-area="" asp-controller="Import" asp-action="ImportMaisonTravauxDevis" method="POST" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-6 mb-3 ">
+                <label for="inputCsvMaisonTravaux" class="form-label">Maison et travaux</label>
+                <div class="input-group">
+                  <input type="file" class="form-control" id="inputCsvMaisonTravaux" accept="/*" asp-for="MaisonTravauxCsv">
+                </div>
+            </div>
+            <div class="col-6 mb-3 ">
+                <label for="inputCsvDevis" class="form-label">Devis</label>
+                <div class="input-group">
+                  <input type="file" class="form-control" id="inputCsvDevis" accept="/*" asp-for="DevisCsv">
+                </div>
+            </div>
+            <div class="d-grid gap-2 my-3">
+                <button class="btn submit-button" type="submit">Importer</button>
+            </div>
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="d-grid gap-2 my-3">
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                      <strong>Error: </strong>@ViewBag.ErrorMessage
+                      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            }
+            
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript" defer src="~/js/operations/importCsvMaisonTravauxDevis.js"></script>

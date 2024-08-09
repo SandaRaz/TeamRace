@@ -1,0 +1,66 @@
+﻿@using Evaluation.Models.Entity
+@using Evaluation.Models.Utils
+@using Evaluation.Models.ViewModel
+@model ClassementEquipeViewModel
+
+@{
+    Layout = ViewData["Layout"]?.ToString();
+
+    string order = "asc";
+    if(ViewBag.order != null)
+    {
+        order = ViewBag.order;
+    }
+}
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 my-3">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 my-2">
+                <button class="btn btn-primary btn-icon-text" onclick="location.href='@Url.Action("ClassementToutCategorie", "Equipe", new { courseId = Model.Course.Id })'">
+                    <i class="mdi mdi-sort-ascending"></i>
+                    <span class="d-inline-block text-left">Classement des equipes toutes categories</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 grid-margin mt-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Classement par catégorie</h4>
+                <form class="form-sample" asp-area="" asp-action="ClassementParCategorie" asp-controller="Equipe" method="GET" enctype="multipart/form-data">
+                    <input type="hidden" value="@Model.Course.Id" name="courseId" />
+                    <input type="hidden" value="@order" name="order" />
+                    <div class="row">
+                        <div class="col-6 mx-auto">
+                            <div class="form-floating">
+                                <select name="categorieId" class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                                    @foreach (Categorie categorie in Model.Categories)
+                                    {
+                                        <option value="@categorie.Id"> @categorie.Nom </option>
+                                    }
+                                </select>
+                                <label for="floatingSelectGrid">Catégorie</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <div class="col-sm-9">
+                                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Voir classement des équipes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                
+                @if(ViewBag.ErrorMessage != null){
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Holy macaroni!</strong> @ViewBag.ErrorMessage
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

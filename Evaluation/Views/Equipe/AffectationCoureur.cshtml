@@ -1,0 +1,102 @@
+﻿@using Evaluation.Models.Entity
+@using Evaluation.Models.ViewModel
+@model AffectationCoureurViewModel
+
+@{
+    Layout = "_Equipe";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <a href="@Url.Action("ListEtapeEquipe", "Equipe", new { currentPage = 1, offset = 0, signe = 0, courseId = @Model.Etape.CourseId })">
+                    <i class="mdi mdi-arrow-left"></i> Retour
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12 stretch-card grid-margin grid-margin-md-0 my-3">
+        <div class="card data-icon-card-primary">
+            <div class="card-body">
+                <p class="card-title text-white">Etape @Model.Etape.RangEtape: @Model.Etape.Nom</p>
+                <div class="row">
+                    <div class="col-8 text-white">
+                        <h3>Nombre de coureur: @Model.Etape.NombreCoureur</h3>
+                        <p class="text-white font-weight-500 mb-0">@Model.Etape.Longueur Km</p>
+                    </div>
+                    <div class="col-4 background-icon"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 grid-margin mt-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Affectation de coureur a cet étape</h4>
+                <form class="form-sample" asp-area="" asp-action="AffectationCoureur" asp-controller="Equipe" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" value="@Model.Etape.Id" name="etapeId" />
+                    <div class="row">
+                        <div class="col-6 mx-auto">
+                            <div class="form-floating">
+                                <select name="coureurId" class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                                    @foreach (Coureur coureur in Model.Coureurs)
+                                    {
+                                        <option value="@coureur.Id">@coureur.Nom (@coureur.Genre)</option>
+                                    }
+                                </select>
+                                <label for="floatingSelectGrid">Participants</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <div class="col-sm-9">
+                                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">AFFECTER</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    @if(ViewBag.ErrorMessage != null){
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>Holy macaroni!</strong> @ViewBag.ErrorMessage
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title text-info">Vos coureur dans Etape @Model.Etape.RangEtape (@Model.Etape.Nom)</h4>
+                <div class="table-responsive">
+                    <table class="table table-striped" id="list-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nom</th>
+                                <th scope="col">Genre</th>
+                                <th scope="col">Numero dossard</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach(Coureur coureurDejaAffectee in Model.CoureurAffectes)
+                            {
+                                <tr id="ligne_@coureurDejaAffectee.Id">
+                                    <td>@coureurDejaAffectee.Nom</td>
+                                    <td>@coureurDejaAffectee.Genre</td>
+                                    <td>@coureurDejaAffectee.NumDossard</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

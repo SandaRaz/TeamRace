@@ -1,0 +1,68 @@
+﻿
+Client:
+-------
+TypeMaison
+	id
+	type
+	description
+
+TypeTravaux
+	id
+	numero
+	designation
+
+Travaux
+	id
+	idTypeTravaux
+	idUnite
+	quantite
+	pu
+	idTypeMaison
+
+TypeFinition
+	id
+	type
+	pourcentage
+
+Devis
+	id
+	numeroClient
+	idTypeMaison
+	idTypeFinition
+	dateDebut
+	dateFin
+	dateCreation
+
+HistoriqueTravauxDevis
+	idDevis
+	travaux
+	unite
+	quantite
+	pu
+
+HistoriqueFinitionDevis
+	idDevis
+	type
+	pourcentage
+
+Facture
+	id
+	idDevis
+	montantTotal
+	etat
+
+Paiement
+	id
+	idFacture
+	reference
+	montant
+	datePaiement
+
+Admin:
+------
+Admin:
+	id
+	Nom
+	Prenoms
+	dateNaissance
+	dateCreation

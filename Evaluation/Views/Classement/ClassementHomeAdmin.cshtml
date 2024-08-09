@@ -1,0 +1,76 @@
+﻿@using Evaluation.Models.Entity
+@using Evaluation.Models.Utils
+@using Evaluation.Models.ViewModel
+@model ClassementHomeAdminViewModel
+
+@{
+    string order = "asc";
+    if(ViewBag.order != null)
+    {
+        order = ViewBag.order;
+    }
+}
+
+<div class="row">
+    <div class="col-12 grid-margin mt-3">
+        <div class="card">
+            <div class="card-body">
+                <form class="form-sample" asp-area="" asp-action="ResultatClassementEtape" asp-controller="Classement" method="GET" enctype="multipart/form-data">
+                    <input type="hidden" value="@Model.Course.Id" name="courseId" />
+                    <input type="hidden" value="@order" name="order" />
+                    <div class="row">
+                        <div class="col-6 mx-auto">
+                            <div class="form-floating">
+                                <select name="etapeId" class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                                    @foreach (Etape etape in Model.Etapes)
+                                    {
+                                        <option value="@etape.Id">@etape.Nom (Etape @etape.RangEtape)</option>
+                                    }
+                                </select>
+                                <label for="floatingSelectGrid">Etapes</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <div class="col-sm-9">
+                                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Voir classement joueurs étape</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <form class="form-sample" asp-area="" asp-action="ResultatClassementEquipe" asp-controller="Classement" method="GET" enctype="multipart/form-data">
+                    <input type="hidden" value="@Model.Course.Id" name="courseId" />
+                    <input type="hidden" value="@order" name="order" />
+                    <div class="row">
+                        <div class="col-6 mx-auto">
+                            <div class="form-floating">
+                                <select name="equipeId" class="form-select" id="floatingSelectGrid" aria-label="Floating label select example">
+                                    @foreach (Equipe equipe in Model.Equipes)
+                                    {
+                                        <option value="@equipe.Id">Equipe @equipe.Nom</option>
+                                    }
+                                </select>
+                                <label for="floatingSelectGrid">Equipe</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <div class="col-sm-9">
+                                    <button type="submit" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">Voir classement joueurs équipe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                @if(ViewBag.ErrorMessage != null){
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>Holy macaroni!</strong> @ViewBag.ErrorMessage
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
