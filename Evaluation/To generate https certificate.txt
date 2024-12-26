@@ -1,0 +1,3 @@
+dotnet dev-certs https
+To trust it: dotnet dev-certs https --trust (Windows and macOS only)
+dotnet dev-certs https --help
